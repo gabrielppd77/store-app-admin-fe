@@ -16,8 +16,10 @@
     "baseUrl": "./src",
     "paths": {
       "@pages/*": ["./pages/*"],
+      "@hooks/*": ["./hooks/*"],
       "@layouts/*": ["./layouts/*"],
       "@components/*": ["./components/*"],
+      "@services/*": ["./services/*"],
       "@styles/*": ["./styles/*"]
     },
 

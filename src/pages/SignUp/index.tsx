@@ -12,7 +12,7 @@ import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 
 import Copyright from "@components/Copyright";
 
-export default function SignIn() {
+export default function SignUp() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -36,46 +36,40 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Bem vindo!
+          Cadastre-se
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Senha"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Entre
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="/" variant="body2">
-                Esqueceu sua senha?
-              </Link>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField required id="name" label="Nome" name="name" />
             </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                name="password"
+                label="Senha"
+                type="password"
+                id="password"
+                autoComplete="new-password"
+              />
+            </Grid>
+          </Grid>
+          <Button type="submit" sx={{ mt: 3, mb: 2 }}>
+            Cadastre-se
+          </Button>
+          <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/sign-up" variant="body2">
-                {"Não possui uma conta? Cadastre-se"}
+              <Link href="/" variant="body2">
+                Já possui uma conta? Entre
               </Link>
             </Grid>
           </Grid>

@@ -1,8 +1,7 @@
-import { lazy } from "react";
-
 import { UnthenticatedLayout } from "@layouts/UnthenticatedLayout";
 
-const SignIn = lazy(() => import("@pages/SignIn"));
+import SignIn from "@pages/SignIn";
+import SignUp from "@pages/SignUp";
 
 const unthenticatedRoutes = {
   path: "/",
@@ -11,6 +10,10 @@ const unthenticatedRoutes = {
     {
       path: "",
       element: <SignIn />,
+    },
+    {
+      path: "sign-up",
+      element: <SignUp />,
     },
   ],
 };
