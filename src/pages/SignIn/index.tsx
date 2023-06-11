@@ -38,7 +38,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Bem vindo!
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // import useAlert from "@hooks/useAlert";
 // import useNotification from "@hooks/useNotification";
 
-// import api from "@services/api";
+import apiAuth from "@services/api-auth";
 // import { nameAppStorage } from "@services/utils";
 // import { FixMeLater } from "@services/FixeMeLater";
 
@@ -25,8 +25,14 @@ interface SignUpProps {
 }
 
 export default function useAuth() {
-  // const router = useRouter();
+  const navigate = useNavigate();
   // const TOKEN_KEY = "TOKENS";
+
+  async function signUp(props: SignUpProps) {
+    await apiAuth.post("/user/create", props);
+    navigate("/");
+  }
+
   // function login(iframeId: string) {
   //   const iframe = document.getElementById(iframeId) as HTMLIFrameElement;
   //   const windowDestination = iframe.contentWindow;
